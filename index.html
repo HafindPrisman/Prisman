@@ -1,0 +1,2121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PRISMAN — SS 2026</title>
+<meta name="description" content="PRISMAN — колекція SS 2026">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0a0a0a;color:#f0f0f0}
+nav{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 2rem;border-bottom:0.5px solid #2a2a2a}
+.brand{font-size:20px;font-weight:500;letter-spacing:0.15em;color:#f0f0f0;text-decoration:none}
+.nav-r{display:flex;gap:1.5rem;align-items:center}
+.nav-r a{font-size:13px;color:#666;text-decoration:none;letter-spacing:0.05em;cursor:pointer}
+.nav-r a:hover{color:#f0f0f0}
+.burger{display:flex;flex-direction:column;justify-content:center;gap:5px;background:transparent;border:none;cursor:pointer;padding:4px;z-index:3001}
+.burger span{display:block;width:22px;height:1.5px;background:#f0f0f0;transition:all 0.25s}
+.burger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.mobile-menu{position:fixed;top:0;right:-100%;width:260px;height:100vh;background:#0f0f0f;border-left:0.5px solid #2a2a2a;z-index:3000;transition:right 0.3s;display:flex;flex-direction:column;padding:5rem 2rem 2rem}
+.mobile-menu.open{right:0}
+.mobile-menu a{font-size:22px;font-weight:500;letter-spacing:0.12em;color:#f0f0f0;text-decoration:none;padding:1rem 0;border-bottom:0.5px solid #1e1e1e;text-transform:capitalize}
+.mobile-menu a:hover{color:#aaa}
+.mobile-menu a:last-child{border-bottom:none}
+.menu-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:2999;display:none}
+.menu-overlay.show{display:block}
+.nav-r a{display:none}
+
+.hero{display:grid;grid-template-columns:1fr 1fr;border-bottom:0.5px solid #2a2a2a;min-height:400px}
+.hero-left{padding:3rem 2rem;display:flex;flex-direction:column;justify-content:space-between;border-right:0.5px solid #2a2a2a}
+.hero-tag{font-size:11px;letter-spacing:0.12em;color:#555}
+.hero-h{font-size:36px;font-weight:500;line-height:1.2;letter-spacing:-0.01em;margin:2rem 0 1rem;color:#f0f0f0}
+.hero-sub{font-size:14px;color:#666;line-height:1.7;margin-bottom:1.5rem}
+.btn-main{display:inline-block;background:#f0f0f0;color:#0a0a0a;font-size:13px;padding:12px 28px;letter-spacing:0.06em;cursor:pointer;border:none;font-family:inherit;text-decoration:none}
+.btn-main:hover{background:#ccc}
+.hero-right{background:#111;display:flex;align-items:center;justify-content:center}
+.hero-placeholder{width:60%;aspect-ratio:3/4;background:#141414;border:0.5px solid #2a2a2a;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px}
+.hero-placeholder svg{opacity:0.25}
+.hero-placeholder span{font-size:11px;letter-spacing:0.1em;color:#444}
+.row3{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:0.5px solid #2a2a2a}
+.col3{padding:1.5rem 2rem;border-right:0.5px solid #2a2a2a}
+.col3:last-child{border-right:none}
+.col3-num{font-size:28px;font-weight:500;color:#f0f0f0;margin-bottom:4px}
+.col3-label{font-size:13px;color:#555;letter-spacing:0.04em}
+.strip{border-bottom:0.5px solid #2a2a2a;padding:0.85rem 2rem;display:flex;align-items:center;gap:2rem;overflow:hidden}
+.strip span{font-size:12px;letter-spacing:0.1em;color:#444;white-space:nowrap}
+.strip-dot{width:3px;height:3px;background:#333;border-radius:50%;flex-shrink:0}
+.section{padding:2rem}
+.section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem}
+.section-head h2{font-size:13px;font-weight:500;letter-spacing:0.08em;color:#f0f0f0}
+.section-head a{font-size:12px;color:#555;text-decoration:none;letter-spacing:0.05em;cursor:pointer}
+.section-head a:hover{color:#f0f0f0}
+.filters{display:flex;gap:0;border-bottom:0.5px solid #2a2a2a;background:#0a0a0a}
+.ftab{padding:12px 20px;font-size:13px;letter-spacing:0.04em;cursor:pointer;border:none;background:transparent;color:#555;border-bottom:2px solid transparent;font-family:inherit}
+.ftab:hover{color:#f0f0f0}
+.ftab.active{color:#f0f0f0;border-bottom:2px solid #f0f0f0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#1a1a1a}
+.item{background:#0f0f0f;cursor:pointer}
+.item:hover .item-img{background:#1a1a1a}
+.item-img{aspect-ratio:3/4;background:#141414;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;transition:background 0.15s}
+.item-img svg{opacity:0.2}
+.item-img-label{font-size:11px;letter-spacing:0.08em;color:#444}
+.item-info{padding:12px;background:#0f0f0f}
+.item-row{display:flex;align-items:center;justify-content:space-between}
+.item-name{font-size:13px;font-weight:500;margin-bottom:3px;color:#f0f0f0}
+.item-mat{font-size:12px;color:#555;margin-bottom:8px}
+.item-price{font-size:13px;font-weight:500;color:#f0f0f0}
+.item-tag{font-size:11px;padding:2px 8px;letter-spacing:0.05em;background:#1e1e1e;color:#555}
+.new-tag{background:#f0f0f0;color:#0a0a0a}
+.detail{display:none;padding:2rem;border-top:0.5px solid #2a2a2a;background:#0a0a0a}
+.detail.open{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.detail-img{aspect-ratio:3/4;background:#141414;display:flex;align-items:center;justify-content:center;border:0.5px solid #2a2a2a}
+.detail-img svg{opacity:0.15}
+.detail-info{display:flex;flex-direction:column;gap:16px;padding:1rem 0}
+.detail-info h2{font-size:20px;font-weight:500;color:#f0f0f0}
+.detail-price{font-size:22px;font-weight:500;color:#f0f0f0}
+.detail-desc{font-size:14px;color:#888;line-height:1.7}
+.sizes{display:flex;gap:8px;flex-wrap:wrap}
+.size{padding:6px 14px;border:0.5px solid #333;font-size:13px;cursor:pointer;background:transparent;font-family:inherit;color:#888}
+.size:hover,.size.sel{background:#f0f0f0;color:#0a0a0a;border-color:#f0f0f0}
+.add-btn{background:#f0f0f0;color:#0a0a0a;border:none;padding:12px 24px;font-size:13px;font-family:inherit;letter-spacing:0.06em;cursor:pointer;width:100%}
+.add-btn:hover{background:#ccc}
+.meta{font-size:12px;color:#555;line-height:1.8}
+.close-btn{background:transparent;border:0.5px solid #333;padding:6px 16px;font-size:12px;font-family:inherit;cursor:pointer;letter-spacing:0.04em;color:#666;width:100%}
+.close-btn:hover{color:#f0f0f0;border-color:#666}
+.sl{font-size:12px;letter-spacing:0.06em;color:#555;margin-bottom:8px}
+.manifesto{padding:3rem 2rem;text-align:center;border-top:0.5px solid #2a2a2a;border-bottom:0.5px solid #2a2a2a}
+.manifesto p{font-size:22px;font-weight:500;line-height:1.4;max-width:480px;margin:0 auto 1rem;color:#f0f0f0}
+.manifesto span{font-size:12px;color:#444;letter-spacing:0.1em}
+footer{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 2rem;border-top:0.5px solid #2a2a2a}
+footer p{font-size:12px;color:#444;letter-spacing:0.04em}
+.footer-links{display:flex;gap:1.5rem}
+.footer-links a{font-size:12px;color:#444;text-decoration:none;letter-spacing:0.04em}
+.footer-links a:hover{color:#f0f0f0}
+.cart-btn{position:relative;background:transparent;border:none;cursor:pointer;color:#666;display:flex;align-items:center;gap:6px;font-family:inherit;font-size:13px;letter-spacing:0.05em;padding:0}
+.cart-btn:hover{color:#f0f0f0}
+.cart-count{position:absolute;top:-6px;right:-8px;background:#f0f0f0;color:#0a0a0a;font-size:10px;font-weight:600;width:16px;height:16px;border-radius:50%;display:none;align-items:center;justify-content:center;line-height:1}
+.cart-count.show{display:flex}
+.lang-curr-switch{display:flex;gap:8px;align-items:center}
+.lang-btn,.curr-btn{background:transparent;border:0.5px solid #333;color:#666;font-size:11px;padding:4px 8px;cursor:pointer;font-family:inherit;letter-spacing:0.05em;transition:all 0.2s}
+.lang-btn:hover,.curr-btn:hover,.lang-btn.active,.curr-btn.active{color:#f0f0f0;border-color:#666}
+.lang-btn.active,.curr-btn.active{background:#1a1a1a}
+
+.wishlist-btn{position:absolute;top:8px;right:8px;background:transparent;border:none;cursor:pointer;color:#666;padding:4px;transition:color 0.2s;z-index:2}
+.wishlist-btn:hover{color:#f0f0f0}
+.wishlist-btn.active{color:#c00}
+.wishlist-btn svg{width:20px;height:20px}
+.wishlist-count{position:absolute;top:-4px;right:-4px;background:#c00;color:#fff;font-size:9px;font-weight:600;width:14px;height:14px;border-radius:50%;display:none;align-items:center;justify-content:center;line-height:1}
+.wishlist-count.show{display:flex}
+
+.search-box{position:relative;margin-right:1rem}
+.search-input{background:#0a0a0a;border:0.5px solid #2a2a2a;color:#f0f0f0;padding:8px 12px;font-size:12px;font-family:inherit;outline:none;width:200px;letter-spacing:0.04em}
+.search-input:focus{border-color:#666}
+.search-input::placeholder{color:#555}
+
+.qty-control{display:flex;align-items:center;gap:8px}
+.qty-btn{background:#1a1a1a;border:0.5px solid #2a2a2a;color:#f0f0f0;width:24px;height:24px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;font-family:inherit}
+.qty-btn:hover{border-color:#666}
+.qty-value{font-size:13px;color:#f0f0f0;min-width:20px;text-align:center}
+
+.size-chart{background:#0a0a0a;border:0.5px solid #2a2a2a;padding:1rem;margin-top:1rem}
+.size-chart h4{font-size:12px;font-weight:500;letter-spacing:0.08em;color:#f0f0f0;margin-bottom:0.75rem}
+.size-chart table{width:100%;border-collapse:collapse;font-size:11px}
+.size-chart th,.size-chart td{border:0.5px solid #2a2a2a;padding:6px;text-align:center;color:#888}
+.size-chart th{color:#f0f0f0;font-weight:500}
+.size-chart-btn{background:transparent;border:none;color:#666;cursor:pointer;font-size:11px;text-decoration:underline;padding:0;margin-top:0.5rem;font-family:inherit}
+.size-chart-btn:hover{color:#f0f0f0}
+
+.price-filter{display:flex;align-items:center;gap:8px;margin-bottom:1rem}
+.price-filter input{background:#0a0a0a;border:0.5px solid #2a2a2a;color:#f0f0f0;padding:6px 10px;font-size:12px;font-family:inherit;outline:none;width:80px;letter-spacing:0.04em}
+.price-filter input:focus{border-color:#666}
+.price-filter span{color:#666;font-size:12px}
+
+.sort-select{background:#0a0a0a;border:0.5px solid #2a2a2a;color:#f0f0f0;padding:6px 12px;font-size:12px;font-family:inherit;outline:none;letter-spacing:0.04em;cursor:pointer}
+.sort-select:focus{border-color:#666}
+
+.stock-status{font-size:11px;padding:2px 8px;background:#1a1a1a;color:#888;margin-top:4px;display:inline-block}
+.stock-status.low{color:#f90}
+.stock-status.out{color:#c00}
+
+.share-buttons{display:flex;gap:8px;margin-top:1rem}
+.share-btn{background:#1a1a1a;border:0.5px solid #2a2a2a;color:#f0f0f0;padding:6px 12px;font-size:11px;font-family:inherit;cursor:pointer;letter-spacing:0.04em;display:flex;align-items:center;gap:6px}
+.share-btn:hover{border-color:#666}
+.share-btn svg{width:14px;height:14px}
+
+.rating{display:flex;align-items:center;gap:4px;margin-bottom:8px}
+.rating-star{color:#666;cursor:pointer;font-size:16px}
+.rating-star.active{color:#f90}
+.rating-value{font-size:12px;color:#888}
+.rating-count{font-size:11px;color:#666}
+
+.checkout-panel{position:fixed;top:0;right:-100%;width:100%;max-width:480px;height:100vh;background:#111;border-left:0.5px solid #2a2a2a;z-index:1001;transition:right 0.3s;display:flex;flex-direction:column}
+.checkout-panel.open{right:0}
+.wishlist-panel{position:fixed;top:0;right:-100%;width:100%;max-width:480px;height:100vh;background:#111;border-left:0.5px solid #2a2a2a;z-index:1001;transition:right 0.3s;display:flex;flex-direction:column}
+.wishlist-panel.open{right:0}
+.checkout-header{display:flex;align-items:center;justify-content:space-between;padding:1.5rem;border-bottom:0.5px solid #2a2a2a}
+.checkout-header h3{font-size:14px;font-weight:500;letter-spacing:0.08em}
+.checkout-close{background:transparent;border:none;color:#666;cursor:pointer;font-size:20px;line-height:1;padding:0}
+.checkout-close:hover{color:#f0f0f0}
+.checkout-content{flex:1;overflow-y:auto;padding:1.5rem}
+.checkout-section{margin-bottom:2rem}
+.checkout-section h4{font-size:12px;font-weight:500;letter-spacing:0.08em;color:#f0f0f0;margin-bottom:1rem}
+.delivery-option{display:flex;align-items:center;padding:12px;border:0.5px solid #2a2a2a;margin-bottom:8px;cursor:pointer;transition:border-color 0.2s}
+.delivery-option:hover{border-color:#444}
+.delivery-option.selected{border-color:#f0f0f0;background:#1a1a1a}
+.delivery-option input{margin-right:12px}
+.delivery-option label{flex:1;font-size:13px;color:#f0f0f0;cursor:pointer}
+.delivery-option .price{font-size:13px;color:#888}
+.payment-option{display:flex;align-items:center;padding:12px;border:0.5px solid #2a2a2a;margin-bottom:8px;cursor:pointer;transition:border-color 0.2s}
+.payment-option:hover{border-color:#444}
+.payment-option.selected{border-color:#f0f0f0;background:#1a1a1a}
+.payment-option input{margin-right:12px}
+.payment-option label{flex:1;font-size:13px;color:#f0f0f0;cursor:pointer}
+.checkout-input{width:100%;border:0.5px solid #2a2a2a;background:#0a0a0a;color:#f0f0f0;padding:10px 12px;font-size:13px;font-family:inherit;outline:none;margin-bottom:8px;letter-spacing:0.04em}
+.checkout-input:focus{border-color:#f0f0f0}
+.checkout-input::placeholder{color:#555}
+.promo-input-group{display:flex;gap:8px;margin-bottom:1rem}
+.promo-input-group input{flex:1}
+.promo-btn{background:#1a1a1a;color:#f0f0f0;border:0.5px solid #2a2a2a;padding:10px 16px;font-size:12px;font-family:inherit;cursor:pointer;letter-spacing:0.04em;white-space:nowrap}
+.promo-btn:hover{border-color:#666}
+.promo-applied{font-size:12px;color:#080;margin-top:8px;display:none}
+.promo-applied.show{display:block}
+.address-book{display:none}
+.address-book.show{display:block}
+.address-item{padding:12px;border:0.5px solid #2a2a2a;margin-bottom:8px;cursor:pointer}
+.address-item:hover{border-color:#444}
+.address-item.selected{border-color:#f0f0f0;background:#1a1a1a}
+.address-item-name{font-size:13px;color:#f0f0f0;margin-bottom:4px}
+.address-item-details{font-size:12px;color:#666}
+.checkout-footer{padding:1.5rem;border-top:0.5px solid #2a2a2a}
+.checkout-summary{display:flex;justify-content:space-between;font-size:13px;margin-bottom:8px;color:#888}
+.checkout-summary span:last-child{color:#f0f0f0;font-weight:500}
+.checkout-discount{display:flex;justify-content:space-between;font-size:13px;margin-bottom:8px;color:#080;display:none}
+.checkout-discount.show{display:flex}
+.checkout-total{display:flex;justify-content:space-between;font-size:15px;margin-bottom:1.5rem;color:#f0f0f0;font-weight:500}
+.checkout-submit{background:#f0f0f0;color:#0a0a0a;border:none;width:100%;padding:14px;font-size:13px;font-family:inherit;letter-spacing:0.06em;cursor:pointer;font-weight:500}
+.checkout-submit:hover{background:#ccc}
+.checkout-submit:disabled{background:#333;color:#666;cursor:not-allowed}
+
+.orders-panel{position:fixed;top:0;right:-100%;width:100%;max-width:480px;height:100vh;background:#111;border-left:0.5px solid #2a2a2a;z-index:1002;transition:right 0.3s;display:flex;flex-direction:column}
+.orders-panel.open{right:0}
+.orders-header{display:flex;align-items:center;justify-content:space-between;padding:1.5rem;border-bottom:0.5px solid #2a2a2a}
+.orders-header h3{font-size:14px;font-weight:500;letter-spacing:0.08em}
+.orders-close{background:transparent;border:none;color:#666;cursor:pointer;font-size:20px;line-height:1;padding:0}
+.orders-close:hover{color:#f0f0f0}
+.orders-content{flex:1;overflow-y:auto;padding:1.5rem}
+.order-item{padding:1rem;border:0.5px solid #2a2a2a;margin-bottom:1rem}
+.order-header{display:flex;justify-content:space-between;margin-bottom:0.75rem}
+.order-id{font-size:12px;color:#888}
+.order-date{font-size:12px;color:#888}
+.order-status{font-size:12px;padding:2px 8px;background:#1a1a1a;color:#f0f0f0}
+.order-status.pending{color:#f90}
+.order-status.processing{color:#09f}
+.order-status.shipped{color:#090}
+.order-status.delivered{color:#666}
+.order-status.cancelled{color:#c00}
+.order-items{margin-bottom:0.75rem}
+.order-item-name{font-size:13px;color:#f0f0f0;margin-bottom:4px}
+.order-item-details{font-size:12px;color:#666}
+.order-footer{display:flex;justify-content:space-between;align-items:center;padding-top:0.75rem;border-top:0.5px solid #2a2a2a}
+.order-total{font-size:14px;color:#f0f0f0;font-weight:500}
+.reorder-btn{background:#1a1a1a;color:#f0f0f0;border:0.5px solid #2a2a2a;padding:6px 12px;font-size:11px;font-family:inherit;cursor:pointer;letter-spacing:0.04em}
+.reorder-btn:hover{border-color:#666}
+.orders-empty{font-size:13px;color:#666;text-align:center;margin-top:3rem;letter-spacing:0.04em}
+
+.cart-panel{position:fixed;top:0;right:-360px;width:360px;height:100vh;background:#111;border-left:0.5px solid #2a2a2a;z-index:1000;transition:right 0.3s;display:flex;flex-direction:column}
+.cart-panel.open{right:0}
+.cart-header{display:flex;align-items:center;justify-content:space-between;padding:1.5rem;border-bottom:0.5px solid #2a2a2a}
+.cart-header h3{font-size:14px;font-weight:500;letter-spacing:0.08em}
+.cart-close{background:transparent;border:none;color:#666;cursor:pointer;font-size:20px;line-height:1;padding:0}
+.cart-close:hover{color:#f0f0f0}
+.cart-items{flex:1;overflow-y:auto;padding:1rem 1.5rem}
+.cart-item{display:flex;justify-content:space-between;align-items:flex-start;padding:12px 0;border-bottom:0.5px solid #1e1e1e}
+.cart-item-info{flex:1}
+.cart-item-name{font-size:13px;color:#f0f0f0;margin-bottom:3px}
+.cart-item-size{font-size:12px;color:#555}
+.cart-item-price{font-size:13px;color:#f0f0f0;white-space:nowrap;margin-left:12px}
+.cart-item-remove{background:transparent;border:none;color:#444;cursor:pointer;font-size:16px;padding:0 0 0 8px;line-height:1}
+.cart-item-remove:hover{color:#f0f0f0}
+.cart-empty{font-size:13px;color:#444;text-align:center;margin-top:3rem;letter-spacing:0.04em}
+.cart-footer{padding:1.5rem;border-top:0.5px solid #2a2a2a}
+.cart-total{display:flex;justify-content:space-between;font-size:14px;margin-bottom:1rem}
+.cart-total span:last-child{font-weight:500}
+.cart-checkout{background:#f0f0f0;color:#0a0a0a;border:none;width:100%;padding:13px;font-size:13px;font-family:inherit;letter-spacing:0.06em;cursor:pointer}
+.cart-checkout:hover{background:#ccc}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:999;display:none}
+.overlay.show{display:block}
+
+@media(max-width:768px){
+  nav{padding:1rem 1.25rem}
+  .brand{font-size:17px}
+
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-left{padding:2rem 1.25rem;border-right:none;border-bottom:0.5px solid #2a2a2a}
+  .hero-h{font-size:26px;margin:1rem 0 0.75rem}
+  .hero-right{padding:1.5rem!important;min-height:260px}
+  .hero-right img{height:240px!important}
+
+  .row3{grid-template-columns:repeat(3,1fr)}
+  .col3{padding:1rem 0.75rem}
+  .col3-num{font-size:20px}
+  .col3-label{font-size:11px}
+
+  .strip{gap:1rem;padding:0.75rem 1.25rem}
+  .strip span{font-size:10px}
+
+  .section{padding:1.25rem}
+  .filters{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .ftab{padding:10px 14px;font-size:12px;white-space:nowrap}
+
+  .grid{grid-template-columns:repeat(2,1fr)}
+
+  .detail.open{grid-template-columns:1fr;gap:1rem;padding:1.25rem}
+  .detail-img{aspect-ratio:3/4;max-height:300px}
+
+  .manifesto{padding:2rem 1.25rem}
+  .manifesto p{font-size:18px}
+
+  footer{flex-direction:column;gap:1rem;text-align:center;padding:1.25rem}
+  .footer-links{justify-content:center}
+
+  .cart-panel{width:100%;right:-100%}
+  .cart-panel.open{right:0}
+
+  .auth-box{max-width:100%;margin:0 1rem}
+}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const _supa = supabase.createClient('https://aqubmcannwbwdeoiuvqt.supabase.co', 'sb_publishable_KzO7a9zSDZlZjF6YQ9W5yA__7GsVI1k');
+</script>
+
+<style>
+.auth-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:2000;display:none;align-items:center;justify-content:center}
+.auth-overlay.show{display:flex}
+.auth-box{background:#fff;color:#111;width:100%;max-width:400px;padding:2.5rem 2rem;position:relative;max-height:90vh;overflow-y:auto}
+.auth-logo{text-align:center;margin-bottom:1.5rem}
+.auth-logo img{height:52px;width:auto}
+.auth-tabs{display:flex;margin-bottom:1.5rem;border-bottom:1px solid #e5e5e5}
+.auth-tab{flex:1;padding:10px;font-size:12px;letter-spacing:0.08em;text-align:center;cursor:pointer;border:none;background:none;color:#aaa;border-bottom:2px solid transparent;font-family:inherit}
+.auth-tab.active{color:#111;border-bottom:2px solid #111}
+.auth-title{font-size:12px;font-weight:500;letter-spacing:0.08em;margin-bottom:1.25rem;color:#111}
+.auth-input{width:100%;border:none;border-bottom:1px solid #ddd;padding:10px 0;font-size:14px;font-family:inherit;outline:none;letter-spacing:0.04em;background:transparent;color:#111;margin-bottom:12px}
+.auth-input::placeholder{font-size:12px;letter-spacing:0.08em;color:#bbb}
+.auth-input:focus{border-bottom-color:#111}
+.auth-btn{width:100%;background:#111;color:#fff;border:none;padding:13px;font-size:12px;font-family:inherit;letter-spacing:0.08em;cursor:pointer;margin-top:8px}
+.auth-btn:hover{background:#333}
+.auth-btn:disabled{background:#999;cursor:not-allowed}
+.auth-close{position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:24px;cursor:pointer;color:#aaa;line-height:1;padding:0}
+.auth-close:hover{color:#111}
+.auth-msg{font-size:12px;margin-top:10px;padding:10px;text-align:center;letter-spacing:0.04em}
+.auth-msg.error{background:#fff0f0;color:#c00}
+.auth-msg.success{background:#f0fff4;color:#080}
+.auth-divider{display:flex;align-items:center;gap:10px;margin:1rem 0;color:#ddd;font-size:11px;letter-spacing:0.06em}
+.auth-divider::before,.auth-divider::after{content:'';flex:1;height:1px;background:#e5e5e5}
+.auth-social{width:100%;background:#fff;color:#111;border:1px solid #ddd;padding:11px;font-size:12px;font-family:inherit;letter-spacing:0.06em;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:8px}
+.auth-social:hover{background:#f5f5f5}
+.auth-note{font-size:11px;color:#aaa;text-align:center;margin-top:1rem;line-height:1.6;letter-spacing:0.03em}
+.checkout-notice{font-size:12px;color:#555;text-align:center;margin-bottom:1.25rem;padding:10px 14px;background:#f5f5f5;letter-spacing:0.03em;line-height:1.5}
+.nav-user{font-size:12px;color:#888;letter-spacing:0.05em}
+.verify-screen{text-align:center;padding:1rem 0}
+.verify-screen .v-icon{font-size:48px;margin-bottom:1rem}
+.verify-screen h3{font-size:14px;font-weight:500;letter-spacing:0.08em;margin-bottom:8px;color:#111}
+.verify-screen p{font-size:13px;color:#888;line-height:1.6;margin-bottom:1.5rem}
+.verify-screen .resend{font-size:12px;color:#111;text-decoration:underline;cursor:pointer;background:none;border:none;font-family:inherit;letter-spacing:0.04em}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="brand" href="#"><img src="data:image/png;base64,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" alt="PRISMAN" style="height:48px;width:auto;display:block;filter:invert(1);"></a>
+  <div class="nav-r">
+    <div class="search-box">
+      <input class="search-input" type="text" id="search-input" placeholder="Пошук..." data-i18n-placeholder="search_placeholder" oninput="handleSearch(this.value)">
+    </div>
+    <div class="lang-curr-switch">
+      <button class="lang-btn active" id="lang-ua" onclick="setLang('ua')">UA</button>
+      <button class="lang-btn" id="lang-en" onclick="setLang('en')">EN</button>
+      <div style="width:1px;height:12px;background:#333"></div>
+      <button class="curr-btn active" id="curr-uah" onclick="setCurr('uah')">₴</button>
+      <button class="curr-btn" id="curr-eur" onclick="setCurr('eur')">€</button>
+      <button class="curr-btn" id="curr-usd" onclick="setCurr('usd')">$</button>
+    </div>
+    <button class="cart-btn" id="wishlist-btn" onclick="openWishlist()">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      <span class="wishlist-count" id="wishlist-count">0</span>
+    </button>
+    <button class="cart-btn" onclick="openCart()">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+      <span data-i18n="cart">кошик</span>
+      <span class="cart-count" id="cart-count">0</span>
+    </button>
+    <button class="burger" id="burger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="menu-overlay" id="menu-overlay" onclick="closeMenu()"></div>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#collection" onclick="closeMenu()" data-i18n="collection">Колекція</a>
+  <a href="#manifesto" onclick="closeMenu()" data-i18n="about">Про бренд</a>
+  <a href="#footer" onclick="closeMenu()" data-i18n="contacts">Контакти</a>
+  <a id="menu-orders-link" onclick="closeMenu();openOrderHistory()" style="cursor:pointer" data-i18n="order_history">ІСТОРІЯ ЗАМОВЛЕНЬ</a>
+  <a id="menu-auth-link" onclick="closeMenu();handleMenuAuth()" style="cursor:pointer" data-i18n="login">Увійти</a>
+</div>
+
+<div class="overlay" id="overlay"></div>
+<div class="checkout-panel" id="checkout-panel">
+  <div class="checkout-header">
+    <h3 data-i18n="checkout_title">ОФОРМЛЕННЯ ЗАМОВЛЕННЯ</h3>
+    <button class="checkout-close" onclick="closeCheckout()">×</button>
+  </div>
+  <div class="checkout-content">
+    <div class="checkout-section">
+      <h4 data-i18n="delivery_method">СПОСІБ ДОСТАВКИ</h4>
+      <div class="delivery-option" onclick="selectDelivery('nova', this)">
+        <input type="radio" name="delivery" value="nova">
+        <label>Нова Пошта</label>
+        <span class="price">70 ₴</span>
+      </div>
+      <div class="delivery-option" onclick="selectDelivery('ukr', this)">
+        <input type="radio" name="delivery" value="ukr">
+        <label>Укрпошта</label>
+        <span class="price">50 ₴</span>
+      </div>
+      <div class="delivery-option" onclick="selectDelivery('pickup', this)">
+        <input type="radio" name="delivery" value="pickup">
+        <label>Самовивіз</label>
+        <span class="price">0 ₴</span>
+      </div>
+    </div>
+
+    <div class="checkout-section" id="address-section">
+      <h4 data-i18n="delivery_address">АДРЕСА ДОСТАВКИ</h4>
+      <input class="checkout-input" type="text" id="checkout-city" placeholder="Місто" data-i18n-placeholder="city_placeholder">
+      <input class="checkout-input" type="text" id="checkout-street" placeholder="Вулиця, будинок, квартира" data-i18n-placeholder="address_placeholder">
+      <input class="checkout-input" type="text" id="checkout-postal" placeholder="Поштовий індекс" data-i18n-placeholder="postal_placeholder">
+    </div>
+
+    <div class="checkout-section">
+      <h4 data-i18n="contact_info">КОНТАКТНА ІНФОРМАЦІЯ</h4>
+      <input class="checkout-input" type="text" id="checkout-name" placeholder="ПІБ" data-i18n-placeholder="name_placeholder">
+      <input class="checkout-input" type="tel" id="checkout-phone" placeholder="Телефон" data-i18n-placeholder="phone_placeholder">
+      <input class="checkout-input" type="email" id="checkout-email" placeholder="Email" data-i18n-placeholder="email_placeholder">
+    </div>
+
+    <div class="checkout-section">
+      <h4 data-i18n="payment_method">СПОСІБ ОПЛАТИ</h4>
+      <div class="payment-option" onclick="selectPayment('liqpay', this)">
+        <input type="radio" name="payment" value="liqpay">
+        <label>LiqPay</label>
+      </div>
+      <div class="payment-option" onclick="selectPayment('paypal', this)">
+        <input type="radio" name="payment" value="paypal">
+        <label>PayPal</label>
+      </div>
+      <div class="payment-option" onclick="selectPayment('applepay', this)">
+        <input type="radio" name="payment" value="applepay">
+        <label>Apple Pay</label>
+      </div>
+      <div class="payment-option" onclick="selectPayment('cod', this)">
+        <input type="radio" name="payment" value="cod">
+        <label data-i18n="payment_cod">Оплата при отриманні</label>
+      </div>
+    </div>
+
+    <div class="checkout-section">
+      <h4 data-i18n="promo_code">ПРОМОКОД</h4>
+      <div class="promo-input-group">
+        <input class="checkout-input" type="text" id="promo-code" placeholder="Введіть промокод" data-i18n-placeholder="promo_placeholder">
+        <button class="promo-btn" onclick="applyPromo()" data-i18n="apply">Застосувати</button>
+      </div>
+      <div class="promo-applied" id="promo-applied"></div>
+    </div>
+
+    <div class="checkout-section" id="address-book-section" style="display:none">
+      <h4 data-i18n="saved_addresses">ЗБЕРЕЖЕНІ АДРЕСИ</h4>
+      <div class="address-book" id="address-book"></div>
+    </div>
+  </div>
+  <div class="checkout-footer">
+    <div class="checkout-summary">
+      <span data-i18n="subtotal">Підсумок</span>
+      <span id="checkout-subtotal">0 ₴</span>
+    </div>
+    <div class="checkout-summary">
+      <span data-i18n="delivery">Доставка</span>
+      <span id="checkout-delivery">0 ₴</span>
+    </div>
+    <div class="checkout-discount" id="checkout-discount">
+      <span data-i18n="discount">Знижка</span>
+      <span id="discount-amount">0 ₴</span>
+    </div>
+    <div class="checkout-total">
+      <span data-i18n="total">Разом</span>
+      <span id="checkout-total">0 ₴</span>
+    </div>
+    <button class="checkout-submit" id="checkout-submit" onclick="submitOrder()" data-i18n="place_order">ОФОРМИТИ ЗАМОВЛЕННЯ</button>
+  </div>
+</div>
+
+<div class="orders-panel" id="orders-panel">
+  <div class="orders-header">
+    <h3 data-i18n="order_history">ІСТОРІЯ ЗАМОВЛЕНЬ</h3>
+    <button class="orders-close" onclick="closeOrderHistory()">×</button>
+  </div>
+  <div class="orders-content" id="orders-content">
+    <p class="orders-empty" data-i18n="orders_empty">У вас ще немає замовлень</p>
+  </div>
+</div>
+
+<div class="wishlist-panel" id="wishlist-panel">
+  <div class="checkout-header">
+    <h3 data-i18n="wishlist_title">ОБРАНЕ</h3>
+    <button class="checkout-close" onclick="closeWishlist()">×</button>
+  </div>
+  <div class="checkout-content" id="wishlist-items">
+    <p class="cart-empty" data-i18n="wishlist_empty">Список обраного порожній</p>
+  </div>
+</div>
+
+<div class="cart-panel" id="cart-panel">
+  <div class="cart-header">
+    <h3 data-i18n="cart_title">КОШИК</h3>
+    <button class="cart-close" onclick="closeCart()">×</button>
+  </div>
+  <div class="cart-items" id="cart-items">
+    <p class="cart-empty" data-i18n="cart_empty">Кошик порожній</p>
+  </div>
+  <div class="cart-footer" id="cart-footer" style="display:none">
+    <div class="cart-total"><span data-i18n="total">Разом</span><span id="cart-total-price">0 ₴</span></div>
+    <button class="cart-checkout" onclick="checkout()" data-i18n="checkout">оформити замовлення</button>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="hero-left">
+    <span class="hero-tag" data-i18n="hero_tag">SS 2026 · НОВА КОЛЕКЦІЯ</span>
+    <div>
+      <h1 class="hero-h" data-i18n="hero_title">Мінімум тканини.<br>Максимум<br>характеру.</h1>
+      <p class="hero-sub" data-i18n="hero_sub">Форма без зайвого.<br>Речі, що говорять самі за себе.</p>
+      <a class="btn-main" href="#collection" data-i18n="view_collection">переглянути колекцію</a>
+    </div>
+  </div>
+  <div class="hero-right" style="padding:2rem;display:flex;align-items:center;justify-content:center;background:#111;"><img src="https://i.ibb.co/fdqM2kbv/image.png" alt="Брюки wide leg PRISMAN SS 2026" style="height:340px;width:auto;object-fit:contain;display:block;"></div>
+</div>
+
+<div class="row3">
+  <div class="col3"><div class="col3-num" id="total-count">9</div><div class="col3-label" data-i18n="items_count">позиції в колекції</div></div>
+  <div class="col3"><div class="col3-num">100%</div><div class="col3-label" data-i18n="natural_materials">натуральні матеріали</div></div>
+  <div class="col3"><div class="col3-num">2026</div><div class="col3-label" data-i18n="founded">рік заснування</div></div>
+</div>
+
+<div class="strip">
+  <span data-i18n="free_delivery">БЕЗКОШТОВНА ДОСТАВКА ВІД 2000 ₴</span>
+  <div class="strip-dot"></div>
+  <span data-i18n="returns">ПОВЕРНЕННЯ ПРОТЯГОМ 30 ДНІВ</span>
+  <div class="strip-dot"></div>
+  <span data-i18n="handmade">РУЧНА РОБОТА</span>
+  <div class="strip-dot"></div>
+  <span data-i18n="eco">ЕКОЛОГІЧНЕ ВИРОБНИЦТВО</span>
+</div>
+
+<div id="collection" class="section">
+  <div class="section-head">
+    <h2 data-i18n="collection_title">КОЛЕКЦІЯ SS 2026</h2>
+    <span id="count" style="font-size:12px;color:#555" data-i18n="shown">Показано: 9</span>
+  </div>
+</div>
+
+<div class="filters">
+  <button class="ftab active" onclick="filter('all',this)" data-i18n="filter_all">Все</button>
+  <button class="ftab" onclick="filter('top',this)" data-i18n="filter_top">Верх</button>
+  <button class="ftab" onclick="filter('bottom',this)" data-i18n="filter_bottom">Низ</button>
+  <button class="ftab" onclick="filter('outer',this)" data-i18n="filter_outer">Верхній одяг</button>
+  <button class="ftab" onclick="filter('acc',this)" data-i18n="filter_acc">Аксесуари</button>
+  <div class="price-filter" style="margin-left:auto">
+    <input type="number" id="price-min" placeholder="Від" oninput="filterByPrice()">
+    <span>-</span>
+    <input type="number" id="price-max" placeholder="До" oninput="filterByPrice()">
+  </div>
+  <select class="sort-select" id="sort-select" onchange="sortItems()">
+    <option value="default" data-i18n="sort_default">За замовчуванням</option>
+    <option value="price-asc" data-i18n="sort_price_asc">Ціна: низька → висока</option>
+    <option value="price-desc" data-i18n="sort_price_desc">Ціна: висока → низька</option>
+    <option value="newest" data-i18n="sort_newest">Найновіші</option>
+  </select>
+</div>
+
+<div class="grid" id="grid"></div>
+
+<div class="detail" id="detail">
+  <div class="detail-img" id="detail-img-inner">
+    <svg id="d-icon" width="64" height="64" fill="none" stroke="#f0f0f0" stroke-width="1.2" viewBox="0 0 24 24">
+      <path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.57a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.57a2 2 0 0 0-1.34-2.23z"/>
+    </svg>
+  </div>
+  <div class="detail-info">
+    <div>
+      <h2 id="d-name"></h2>
+      <p class="detail-price" id="d-price"></p>
+    </div>
+    <div class="rating" id="d-rating">
+      <span class="rating-star" onclick="setRating(1)">★</span>
+      <span class="rating-star" onclick="setRating(2)">★</span>
+      <span class="rating-star" onclick="setRating(3)">★</span>
+      <span class="rating-star" onclick="setRating(4)">★</span>
+      <span class="rating-star" onclick="setRating(5)">★</span>
+      <span class="rating-value" id="rating-value">0.0</span>
+      <span class="rating-count" id="rating-count">(0)</span>
+    </div>
+    <p class="detail-desc" id="d-desc"></p>
+    <div class="stock-status" id="d-stock">В наявності</div>
+    <div>
+      <p class="sl" data-i18n="size">РОЗМІР</p>
+      <div class="sizes">
+        <button class="size" onclick="selSize(this)">XS</button>
+        <button class="size" onclick="selSize(this)">S</button>
+        <button class="size sel" onclick="selSize(this)">M</button>
+        <button class="size" onclick="selSize(this)">L</button>
+        <button class="size" onclick="selSize(this)">XL</button>
+      </div>
+      <button class="size-chart-btn" onclick="toggleSizeChart()" data-i18n="size_chart">Таблиця розмірів</button>
+    </div>
+    <div class="size-chart" id="size-chart" style="display:none">
+      <h4 data-i18n="size_chart">Таблиця розмірів</h4>
+      <table>
+        <tr>
+          <th>Розмір</th>
+          <th>XS</th>
+          <th>S</th>
+          <th>M</th>
+          <th>L</th>
+          <th>XL</th>
+        </tr>
+        <tr>
+          <td>Окружність грудей</td>
+          <td>84</td>
+          <td>88</td>
+          <td>92</td>
+          <td>96</td>
+          <td>100</td>
+        </tr>
+        <tr>
+          <td>Окружність талії</td>
+          <td>64</td>
+          <td>68</td>
+          <td>72</td>
+          <td>76</td>
+          <td>80</td>
+        </tr>
+        <tr>
+          <td>Довжина</td>
+          <td>62</td>
+          <td>64</td>
+          <td>66</td>
+          <td>68</td>
+          <td>70</td>
+        </tr>
+      </table>
+    </div>
+    <div class="meta" id="d-meta"></div>
+    <div class="share-buttons">
+      <button class="share-btn" onclick="shareProduct('facebook')">
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        Facebook
+      </button>
+      <button class="share-btn" onclick="shareProduct('twitter')">
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+        Twitter
+      </button>
+      <button class="share-btn" onclick="shareProduct('telegram')">
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M22 2L2 9l9 3 3 9 8-19z"/></svg>
+        Telegram
+      </button>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <button class="add-btn" onclick="addToCart()" data-i18n="add_to_cart">додати до кошика</button>
+      <button class="close-btn" onclick="toggleWishlist()" id="detail-wishlist-btn" data-i18n="add_to_wishlist">додати в обране</button>
+      <button class="close-btn" onclick="closeDetail()" data-i18n="close">закрити</button>
+    </div>
+  </div>
+</div>
+
+<div id="manifesto" class="manifesto">
+  <p data-i18n="manifesto_text">Ми створюємо речі, які залишаються з тобою довше одного сезону.</p>
+  <span data-i18n="manifesto_label">МАНІФЕСТ PRISMAN · SLOW FASHION</span>
+</div>
+
+<footer id="footer">
+  <p>© 2026 PRISMAN</p>
+  <div class="footer-links">
+    <a href="https://www.instagram.com/slon.fann/" target="_blank">Instagram</a>
+    <a href="https://t.me/hafindgg" target="_blank">Telegram</a>
+    <a href="mailto:hafind36@gmail.com">hafind36@gmail.com</a>
+  </div>
+</footer>
+
+<script>
+
+// ── SUPABASE AUTH ──────────────────────────────────────────
+let currentUser = null;
+let pendingCheckout = false;
+let lastRegEmail = '';
+
+async function initAuth(){
+  const { data: { session } } = await _supa.auth.getSession();
+  if(session?.user){
+    currentUser = session.user;
+    updateNavUser();
+  }
+  _supa.auth.onAuthStateChange((_event, session) => {
+    currentUser = session?.user || null;
+    updateNavUser();
+  });
+}
+
+function openAuth(){
+  document.getElementById('auth-overlay').classList.add('show');
+  const notice = document.getElementById('checkout-notice');
+  if(pendingCheckout){
+    notice.textContent = translations[currentLang].checkout_notice;
+    notice.style.display = 'block';
+  } else {
+    notice.style.display = 'none';
+  }
+}
+function closeAuth(){
+  document.getElementById('auth-overlay').classList.remove('show');
+  document.getElementById('verify-screen').style.display='none';
+  document.getElementById('auth-forms').style.display='block';
+  document.getElementById('checkout-notice').style.display='none';
+  showMsg('login-msg','','');
+  showMsg('reg-msg','','');
+}
+
+function switchTab(tab, btn){
+  document.querySelectorAll('.auth-tab').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('auth-login').style.display = tab==='login'?'block':'none';
+  document.getElementById('auth-register').style.display = tab==='register'?'block':'none';
+}
+
+function showMsg(id, text, type){
+  const el = document.getElementById(id);
+  if(!text){ el.style.display='none'; return; }
+  el.textContent = text;
+  el.className = 'auth-msg ' + type;
+  el.style.display = 'block';
+}
+
+function setLoading(btnId, loading){
+  const btn = document.getElementById(btnId);
+  btn.disabled = loading;
+  btn.textContent = loading ? translations[currentLang].loading : (btnId==='login-btn' ? translations[currentLang].login_btn : translations[currentLang].register_btn);
+}
+
+async function doLogin(){
+  const email = document.getElementById('login-email').value.trim();
+  const pass = document.getElementById('login-pass').value;
+  if(!email || !pass){ showMsg('login-msg',translations[currentLang].error_fill_fields,'error'); return; }
+  setLoading('login-btn', true);
+  const { data, error } = await _supa.auth.signInWithPassword({ email, password: pass });
+  setLoading('login-btn', false);
+  if(error){
+    if(error.message.includes('Email not confirmed') || error.message.includes('email_not_confirmed')){
+      showMsg('login-msg',translations[currentLang].error_confirm_email,'error');
+    } else {
+      showMsg('login-msg',translations[currentLang].error_invalid_login,'error');
+    }
+    return;
+  }
+  if(data.user && !data.user.email_confirmed_at){
+    showMsg('login-msg',translations[currentLang].error_confirm_email_first,'error');
+    return;
+  }
+  currentUser = data.user;
+  updateNavUser();
+  closeAuth();
+  proceedCheckout();
+}
+
+async function doRegister(){
+  const name = document.getElementById('reg-name').value.trim();
+  const email = document.getElementById('reg-email').value.trim();
+  const pass = document.getElementById('reg-pass').value;
+  if(!name || !email || !pass){ showMsg('reg-msg',translations[currentLang].error_fill_fields,'error'); return; }
+  if(pass.length < 6){ showMsg('reg-msg',translations[currentLang].error_password_short,'error'); return; }
+  setLoading('reg-btn', true);
+  const { data, error } = await _supa.auth.signUp({
+    email, password: pass,
+    options: { data: { full_name: name } }
+  });
+  setLoading('reg-btn', false);
+  if(error){ showMsg('reg-msg', error.message, 'error'); return; }
+  lastRegEmail = email;
+
+  // Додати контакт до Brevo
+  fetch('https://api.brevo.com/v3/contacts', {
+    method: 'POST',
+    headers: {
+      'accept': 'application/json',
+      'content-type': 'application/json',
+      'api-key': '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'
+    },
+    body: JSON.stringify({
+      email: email,
+      attributes: { FIRSTNAME: name },
+      listIds: [3],
+      updateEnabled: true
+    })
+  });
+
+  document.getElementById('auth-forms').style.display='none';
+  document.getElementById('verify-screen').style.display='block';
+}
+
+async function doGoogle(){
+  await _supa.auth.signInWithOAuth({ provider: 'google',
+    options: { redirectTo: window.location.href }
+  });
+}
+
+function goToLogin(){
+  document.getElementById("verify-screen").style.display="none";
+  document.getElementById("auth-forms").style.display="block";
+  switchTab("login", document.querySelector(".auth-tab"));
+}
+
+async function resendEmail(){
+  if(!lastRegEmail) return;
+  const { error } = await _supa.auth.resend({ type:'signup', email: lastRegEmail });
+  const el = document.getElementById('resend-msg');
+  el.style.display='block';
+  if(error){ el.className='auth-msg error'; el.textContent='Помилка. Спробуйте пізніше.'; }
+  else { el.className='auth-msg success'; el.textContent='Лист надіслано!'; }
+}
+
+async function doLogout(){
+  await _supa.auth.signOut();
+  currentUser = null;
+
+  // Clear user-specific data (addresses only, orders are kept)
+  localStorage.removeItem('prisman_addresses');
+  cart = [];
+  updateCartUI();
+
+  updateNavUser();
+  closeMenu();
+}
+
+function handleMenuAuth(){
+  if(currentUser){ doLogout(); } else { openAuth(); }
+}
+
+function updateNavUser(){
+  let el = document.getElementById('nav-user-name');
+  const navR = document.querySelector('.nav-r');
+  const menuLink = document.getElementById('menu-auth-link');
+  if(currentUser){
+    const name = currentUser.user_metadata?.full_name || currentUser.email.split('@')[0];
+    if(!el){
+      el = document.createElement('span');
+      el.id='nav-user-name';
+      el.className='nav-user';
+      navR.insertBefore(el, navR.firstChild);
+    }
+    el.textContent = name;
+    if(menuLink) menuLink.textContent = translations[currentLang].logout;
+  } else {
+    if(el) el.remove();
+    if(menuLink) menuLink.textContent = translations[currentLang].login;
+  }
+}
+
+function proceedCheckout(){
+  if(pendingCheckout){
+    pendingCheckout = false;
+    completeCheckout();
+  }
+}
+
+function checkout(){
+  if(cart.length === 0) return;
+  if(!currentUser){ pendingCheckout=true; openAuth(); return; }
+  completeCheckout();
+}
+
+function completeCheckout(){
+  alert(translations[currentLang].order_success);
+  cart = [];
+  updateCartUI();
+  closeCart();
+}
+
+// ── CHECKOUT ───────────────────────────────────────────────
+let selectedDelivery = null;
+let selectedPayment = null;
+let appliedPromo = null;
+let deliveryPrices = {
+  nova: 70,
+  ukr: 50,
+  pickup: 0
+};
+
+const promoCodes = {
+  'PRISMAN10': { discount: 0.10, type: 'percent' },
+  'SUMMER2026': { discount: 200, type: 'fixed' },
+  'WELCOME': { discount: 0.15, type: 'percent' }
+};
+
+function openCheckout(){
+  closeCart();
+  document.getElementById('checkout-panel').classList.add('open');
+  document.getElementById('overlay').classList.add('show');
+  updateCheckoutSummary();
+  loadAddressBook();
+}
+
+function closeCheckout(){
+  document.getElementById('checkout-panel').classList.remove('open');
+}
+
+function selectDelivery(type, element){
+  selectedDelivery = type;
+  document.querySelectorAll('.delivery-option').forEach(el => el.classList.remove('selected'));
+  element.classList.add('selected');
+  element.querySelector('input').checked = true;
+
+  const addressSection = document.getElementById('address-section');
+  if(type === 'pickup'){
+    addressSection.style.display = 'none';
+  } else {
+    addressSection.style.display = 'block';
+  }
+
+  updateCheckoutSummary();
+}
+
+function selectPayment(type, element){
+  selectedPayment = type;
+  document.querySelectorAll('.payment-option').forEach(el => el.classList.remove('selected'));
+  element.classList.add('selected');
+  element.querySelector('input').checked = true;
+}
+
+function applyPromo(){
+  const code = document.getElementById('promo-code').value.trim().toUpperCase();
+  const promoEl = document.getElementById('promo-applied');
+
+  if(!code){
+    promoEl.textContent = 'Введіть промокод';
+    promoEl.className = 'promo-applied show';
+    promoEl.style.color = '#c00';
+    return;
+  }
+
+  if(promoCodes[code]){
+    appliedPromo = promoCodes[code];
+    const discountText = appliedPromo.type === 'percent'
+      ? `-${appliedPromo.discount * 100}%`
+      : `-${appliedPromo.discount} ₴`;
+    promoEl.textContent = `Промокод застосовано: ${discountText}`;
+    promoEl.className = 'promo-applied show';
+    promoEl.style.color = '#080';
+  } else {
+    promoEl.textContent = 'Невірний промокод';
+    promoEl.className = 'promo-applied show';
+    promoEl.style.color = '#c00';
+    appliedPromo = null;
+  }
+
+  updateCheckoutSummary();
+}
+
+function updateCheckoutSummary(){
+  const subtotal = cart.reduce((sum, i) => {
+    const n = parseInt(i.price.replace(/\D/g, ''));
+    return sum + n * (i.qty || 1);
+  }, 0);
+
+  const delivery = selectedDelivery ? deliveryPrices[selectedDelivery] : 0;
+  let discount = 0;
+
+  if(appliedPromo){
+    if(appliedPromo.type === 'percent'){
+      discount = subtotal * appliedPromo.discount;
+    } else {
+      discount = appliedPromo.discount;
+    }
+  }
+
+  const total = Math.max(0, subtotal + delivery - discount);
+
+  document.getElementById('checkout-subtotal').textContent = subtotal.toLocaleString('uk-UA') + ' ₴';
+  document.getElementById('checkout-delivery').textContent = delivery.toLocaleString('uk-UA') + ' ₴';
+  document.getElementById('discount-amount').textContent = '-' + discount.toLocaleString('uk-UA') + ' ₴';
+  document.getElementById('checkout-total').textContent = total.toLocaleString('uk-UA') + ' ₴';
+
+  const discountEl = document.getElementById('checkout-discount');
+  discountEl.classList.toggle('show', discount > 0);
+}
+
+function loadAddressBook(){
+  if(!currentUser) return;
+
+  const addressBookSection = document.getElementById('address-book-section');
+  const addressBook = document.getElementById('address-book');
+
+  // Load addresses from localStorage or Supabase
+  let addresses = JSON.parse(localStorage.getItem('prisman_addresses') || '[]');
+
+  // Limit to 3 addresses, remove oldest if exceeded
+  if(addresses.length > 3){
+    addresses = addresses.slice(-3); // Keep only last 3 addresses
+    localStorage.setItem('prisman_addresses', JSON.stringify(addresses));
+  }
+
+  if(addresses.length > 0){
+    addressBookSection.style.display = 'block';
+    addressBook.innerHTML = addresses.map((addr, index) => `
+      <div class="address-item" onclick="selectAddress(${index})">
+        <div class="address-item-name">${addr.name}</div>
+        <div class="address-item-details">${addr.city}, ${addr.street}, ${addr.postal}</div>
+      </div>
+    `).join('');
+    addressBook.classList.add('show');
+  }
+}
+
+function selectAddress(index){
+  const addresses = JSON.parse(localStorage.getItem('prisman_addresses') || '[]');
+  const addr = addresses[index];
+
+  document.getElementById('checkout-name').value = addr.name;
+  document.getElementById('checkout-city').value = addr.city;
+  document.getElementById('checkout-street').value = addr.street;
+  document.getElementById('checkout-postal').value = addr.postal;
+
+  document.querySelectorAll('.address-item').forEach(el => el.classList.remove('selected'));
+  document.querySelectorAll('.address-item')[index].classList.add('selected');
+}
+
+function saveAddress(){
+  if(!currentUser) return;
+
+  const address = {
+    name: document.getElementById('checkout-name').value,
+    city: document.getElementById('checkout-city').value,
+    street: document.getElementById('checkout-street').value,
+    postal: document.getElementById('checkout-postal').value
+  };
+
+  if(!address.name || !address.city || !address.street){
+    return;
+  }
+
+  const addresses = JSON.parse(localStorage.getItem('prisman_addresses') || '[]');
+
+  // Check if address already exists (avoid duplicates)
+  const isDuplicate = addresses.some(addr =>
+    addr.name === address.name &&
+    addr.city === address.city &&
+    addr.street === address.street &&
+    addr.postal === address.postal
+  );
+
+  if(!isDuplicate){
+    addresses.push(address);
+
+    // Limit to 3 addresses, remove oldest if exceeded
+    if(addresses.length > 3){
+      addresses.shift(); // Remove first (oldest) address
+    }
+
+    localStorage.setItem('prisman_addresses', JSON.stringify(addresses));
+  }
+
+  loadAddressBook();
+}
+
+async function submitOrder(){
+  if(!selectedDelivery){
+    alert('Оберіть спосіб доставки');
+    return;
+  }
+
+  if(!selectedPayment){
+    alert('Оберіть спосіб оплати');
+    return;
+  }
+
+  const name = document.getElementById('checkout-name').value;
+  const phone = document.getElementById('checkout-phone').value;
+  const email = document.getElementById('checkout-email').value;
+
+  if(!name || !phone || !email){
+    alert('Заповніть контактну інформацію');
+    return;
+  }
+
+  if(selectedDelivery !== 'pickup'){
+    const city = document.getElementById('checkout-city').value;
+    const street = document.getElementById('checkout-street').value;
+    const postal = document.getElementById('checkout-postal').value;
+
+    if(!city || !street || !postal){
+      alert('Заповніть адресу доставки');
+      return;
+    }
+  }
+
+  // Save address if user is logged in
+  if(currentUser){
+    saveAddress();
+  }
+
+  // Process payment based on selected method
+  if(selectedPayment === 'liqpay'){
+    processLiqPay();
+  } else if(selectedPayment === 'paypal'){
+    processPayPal();
+  } else if(selectedPayment === 'applepay'){
+    processApplePay();
+  } else {
+    // Cash on delivery - complete order
+    completeOrder();
+  }
+}
+
+function processLiqPay(){
+  // LiqPay інтеграція
+  // Для реальної інтеграції потрібно:
+  // 1. Отримати public_key та private_key від LiqPay
+  // 2. Створити форму з правильними параметрами
+  // 3. Підписати дані з private_key на сервері
+
+  const total = document.getElementById('checkout-total').textContent;
+  const orderId = Date.now();
+
+  // Демо-версія - відкриває LiqPay checkout в новому вікні
+  // Для реальної інтеграції треба замінити на правильний endpoint
+  const liqpayForm = document.createElement('form');
+  liqpayForm.method = 'POST';
+  liqpayForm.action = 'https://www.liqpay.ua/api/3/checkout';
+  liqpayForm.target = '_blank';
+
+  // Параметри для LiqPay (для реальної інтеграції треба підписати на сервері)
+  liqpayForm.innerHTML = `
+    <input type="hidden" name="public_key" value="YOUR_PUBLIC_KEY">
+    <input type="hidden" name="amount" value="${total.replace(/[^\d.]/g, '')}">
+    <input type="hidden" name="currency" value="UAH">
+    <input type="hidden" name="description" value="Замовлення #${orderId}">
+    <input type="hidden" name="order_id" value="${orderId}">
+    <input type="hidden" name="server_url" value="YOUR_SERVER_URL">
+    <input type="hidden" name="result_url" value="${window.location.href}">
+    <input type="hidden" name="language" value="${currentLang}">
+    <input type="hidden" name="sandbox" value="1">
+  `;
+
+  document.body.appendChild(liqpayForm);
+  liqpayForm.submit();
+  document.body.removeChild(liqpayForm);
+
+  // Для демо - завершуємо замовлення одразу
+  completeOrder();
+}
+
+function processPayPal(){
+  // PayPal інтеграція
+  // Для реальної інтеграції потрібно:
+  // 1. Отримати Client ID від PayPal Developer
+  // 2. Підключити PayPal JS SDK
+  // 3. Створити Order через PayPal API
+
+  const total = document.getElementById('checkout-total').textContent;
+
+  // Демо-версія - відкриває PayPal checkout
+  // Для реальної інтеграції треба використати PayPal JS SDK
+  const paypalUrl = `https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=YOUR_PAYPAL_EMAIL&currency_code=UAH&amount=${total.replace(/[^\d.]/g, '')}&item_name=Замовлення+${Date.now()}`;
+
+  window.open(paypalUrl, '_blank');
+
+  // Для демо - завершуємо замовлення одразу
+  completeOrder();
+}
+
+function processApplePay(){
+  // Apple Pay інтеграція
+  // Для реальної інтеграції потрібно:
+  // 1. Отримати Apple Pay Merchant ID
+  // 2. Налаштувати Apple Pay JS API
+  // 3. Реалізувати обробку Apple Pay session
+
+  if (!window.ApplePaySession) {
+    alert('Apple Pay не підтримується на цьому пристрої');
+    return;
+  }
+
+  const total = document.getElementById('checkout-total').textContent;
+  const amount = total.replace(/[^\d.]/g, '');
+
+  // Демо-версія Apple Pay
+  // Для реальної інтеграції треба використати Apple Pay JS API
+  const request = {
+    countryCode: 'UA',
+    currencyCode: 'UAH',
+    supportedNetworks: ['visa', 'masterCard'],
+    merchantCapabilities: ['supports3DS'],
+    total: { label: 'PRISMAN', amount: amount }
+  };
+
+  // Для демо - просто показуємо повідомлення
+  alert('Apple Pay: ' + amount + ' UAH\n\nДля реальної інтеграції потрібен Apple Pay Merchant ID');
+  completeOrder();
+}
+
+function completeOrder(){
+  const order = {
+    id: Date.now(),
+    items: cart,
+    delivery: selectedDelivery,
+    payment: selectedPayment,
+    promo: appliedPromo,
+    total: document.getElementById('checkout-total').textContent,
+    status: 'pending',
+    date: new Date().toISOString(),
+    userEmail: currentUser ? currentUser.email : 'guest'
+  };
+
+  // Save order to localStorage (in real app, save to Supabase)
+  const orders = JSON.parse(localStorage.getItem('prisman_orders') || '[]');
+  orders.push(order);
+  localStorage.setItem('prisman_orders', JSON.stringify(orders));
+
+  alert(translations[currentLang].order_success);
+  cart = [];
+  updateCartUI();
+  closeCheckout();
+}
+
+// Override checkout function to open checkout panel
+const originalCheckout = checkout;
+checkout = function(){
+  if(cart.length === 0) return;
+  if(!currentUser){ pendingCheckout=true; openAuth(); return; }
+  openCheckout();
+};
+// ── END CHECKOUT ───────────────────────────────────────────
+
+// ── ORDER HISTORY ───────────────────────────────────────────
+function openOrderHistory(){
+  if(!currentUser){
+    alert(translations[currentLang].login);
+    openAuth();
+    return;
+  }
+  document.getElementById('orders-panel').classList.add('open');
+  document.getElementById('overlay').classList.add('show');
+  loadOrders();
+}
+
+function closeOrderHistory(){
+  document.getElementById('orders-panel').classList.remove('open');
+}
+
+function loadOrders(){
+  const ordersContent = document.getElementById('orders-content');
+  const allOrders = JSON.parse(localStorage.getItem('prisman_orders') || '[]');
+
+  // Filter orders by current user email
+  const userOrders = allOrders.filter(order => {
+    if(!currentUser) return false;
+    return order.userEmail === currentUser.email;
+  });
+
+  if(userOrders.length === 0){
+    ordersContent.innerHTML = `<p class="orders-empty">${translations[currentLang].orders_empty}</p>`;
+    return;
+  }
+
+  ordersContent.innerHTML = userOrders.reverse().map(order => {
+    const statusKey = 'status_' + order.status;
+    const statusText = translations[currentLang][statusKey] || order.status;
+    const date = new Date(order.date).toLocaleDateString('uk-UA');
+
+    return `
+      <div class="order-item">
+        <div class="order-header">
+          <span class="order-id">#${order.id}</span>
+          <span class="order-date">${date}</span>
+          <span class="order-status ${order.status}">${statusText}</span>
+        </div>
+        <div class="order-items">
+          ${order.items.map(item => `
+            <div class="order-item-name">${item.name}</div>
+            <div class="order-item-details">${translations[currentLang].cart_item_size}: ${item.size} · ${item.price}</div>
+          `).join('')}
+        </div>
+        <div class="order-footer">
+          <span class="order-total">${translations[currentLang].order_total}: ${order.total}</span>
+          <button class="reorder-btn" onclick="reorderOrder(${order.id})">${translations[currentLang].reorder}</button>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+function reorderOrder(orderId){
+  const orders = JSON.parse(localStorage.getItem('prisman_orders') || '[]');
+  const order = orders.find(o => o.id === orderId);
+
+  if(order){
+    cart = order.items.map(item => ({...item, uid: Date.now() + Math.random()}));
+    updateCartUI();
+    closeOrderHistory();
+    openCart();
+  }
+}
+
+// ── WISHLIST ───────────────────────────────────────────────
+let wishlist = [];
+
+function openWishlist(){
+  document.getElementById('wishlist-panel').classList.add('open');
+  document.getElementById('overlay').classList.add('show');
+  loadWishlist();
+}
+
+function closeWishlist(){
+  document.getElementById('wishlist-panel').classList.remove('open');
+}
+
+document.getElementById('overlay').addEventListener('click', function(){
+  closeWishlist();
+  closeCart();
+  closeCheckout();
+  closeOrderHistory();
+});
+
+function loadWishlist(){
+  wishlist = JSON.parse(localStorage.getItem('prisman_wishlist') || '[]');
+  updateWishlistUI();
+}
+
+function updateWishlistUI(){
+  const count = wishlist.length;
+  const el = document.getElementById('wishlist-count');
+  el.textContent = count;
+  el.classList.toggle('show', count > 0);
+
+  const container = document.getElementById('wishlist-items');
+  if(count === 0){
+    container.innerHTML = `<p class="cart-empty">${translations[currentLang].wishlist_empty}</p>`;
+    return;
+  }
+
+  container.innerHTML = wishlist.map(item => `
+    <div class="cart-item">
+      <div class="cart-item-info">
+        <div class="cart-item-name">${item.name}</div>
+        <div class="cart-item-size">${item.price}</div>
+      </div>
+      <span class="cart-item-price">${item.price}</span>
+      <button class="cart-item-remove" onclick="removeFromWishlist(${item.id})">×</button>
+    </div>
+  `).join('');
+}
+
+function toggleWishlist(){
+  if(!current) return;
+  const index = wishlist.findIndex(w => w.id === current.id);
+  if(index > -1){
+    wishlist.splice(index, 1);
+  } else {
+    wishlist.push({...current});
+  }
+  localStorage.setItem('prisman_wishlist', JSON.stringify(wishlist));
+  updateWishlistUI();
+  updateWishlistButton();
+  render(items);
+}
+
+function removeFromWishlist(id){
+  wishlist = wishlist.filter(w => w.id !== id);
+  localStorage.setItem('prisman_wishlist', JSON.stringify(wishlist));
+  updateWishlistUI();
+}
+
+function updateWishlistButton(){
+  const btn = document.getElementById('detail-wishlist-btn');
+  if(!current || !btn) return;
+  const inWishlist = wishlist.some(w => w.id === current.id);
+  btn.classList.toggle('active', inWishlist);
+  btn.textContent = inWishlist ? translations[currentLang].remove_from_wishlist : translations[currentLang].add_to_wishlist;
+}
+
+function toggleWishlistItem(id){
+  const item = items.find(i => i.id === id);
+  if(!item) return;
+
+  const index = wishlist.findIndex(w => w.id === id);
+  if(index > -1){
+    wishlist.splice(index, 1);
+  } else {
+    wishlist.push({...item});
+  }
+  localStorage.setItem('prisman_wishlist', JSON.stringify(wishlist));
+  updateWishlistUI();
+  render(items);
+}
+// ── END WISHLIST ───────────────────────────────────────────
+
+// ── SEARCH ───────────────────────────────────────────────
+let currentSearch = '';
+
+function handleSearch(query){
+  currentSearch = query.toLowerCase();
+  render(items);
+}
+
+// ── END SEARCH ───────────────────────────────────────────
+
+// ── QUANTITY CONTROL ─────────────────────────────────────
+function updateQuantity(uid, delta){
+  const item = cart.find(i => i.uid === uid);
+  if(item){
+    item.qty = (item.qty || 1) + delta;
+    if(item.qty < 1) item.qty = 1;
+    updateCartUI();
+  }
+}
+
+function setQuantity(uid, value){
+  const item = cart.find(i => i.uid === uid);
+  if(item){
+    item.qty = Math.max(1, parseInt(value) || 1);
+    updateCartUI();
+  }
+}
+// ── END QUANTITY CONTROL ─────────────────────────────────
+
+// ── SIZE CHART ───────────────────────────────────────────
+function toggleSizeChart(){
+  const chart = document.getElementById('size-chart');
+  chart.style.display = chart.style.display === 'none' ? 'block' : 'none';
+}
+// ── END SIZE CHART ───────────────────────────────────────
+
+// ── PRICE FILTER ─────────────────────────────────────────
+let priceFilter = { min: 0, max: Infinity };
+
+function filterByPrice(){
+  priceFilter.min = parseInt(document.getElementById('price-min').value) || 0;
+  priceFilter.max = parseInt(document.getElementById('price-max').value) || Infinity;
+  render(items);
+}
+// ── END PRICE FILTER ─────────────────────────────────────
+
+// ── SORTING ───────────────────────────────────────────────
+let currentSort = 'default';
+
+function sortItems(){
+  currentSort = document.getElementById('sort-select').value;
+  render(items);
+}
+// ── END SORTING ─────────────────────────────────────────
+
+// ── RATING ───────────────────────────────────────────────
+let currentRating = 0;
+
+function setRating(rating){
+  currentRating = rating;
+  const stars = document.querySelectorAll('.rating-star');
+  stars.forEach((star, index) => {
+    star.classList.toggle('active', index < rating);
+  });
+  document.getElementById('rating-value').textContent = rating.toFixed(1);
+
+  // Save rating to localStorage
+  if(current){
+    const ratings = JSON.parse(localStorage.getItem('prisman_ratings') || '{}');
+    const itemRating = ratings[current.id] || { value: 0, count: 0 };
+
+    // Calculate new average rating
+    const totalRating = itemRating.value * itemRating.count + rating;
+    const newCount = itemRating.count + 1;
+    const newValue = totalRating / newCount;
+
+    ratings[current.id] = { value: newValue, count: newCount };
+    localStorage.setItem('prisman_ratings', JSON.stringify(ratings));
+
+    document.getElementById('rating-count').textContent = `(${newCount})`;
+  }
+}
+
+function loadItemRating(itemId){
+  const ratings = JSON.parse(localStorage.getItem('prisman_ratings') || '{}');
+  const itemRating = ratings[itemId] || { value: 0, count: 0 };
+  document.getElementById('rating-value').textContent = itemRating.value.toFixed(1);
+  document.getElementById('rating-count').textContent = `(${itemRating.count})`;
+}
+// ── END RATING ───────────────────────────────────────────
+
+// ── SHARE ─────────────────────────────────────────────────
+function shareProduct(platform){
+  if(!current) return;
+  const url = window.location.href;
+  const text = current.name;
+
+  let shareUrl = '';
+  switch(platform){
+    case 'facebook':
+      shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+      break;
+    case 'twitter':
+      shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`;
+      break;
+    case 'telegram':
+      shareUrl = `https://t.me/share/url?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`;
+      break;
+  }
+
+  window.open(shareUrl, '_blank', 'width=600,height=400');
+}
+// ── END SHARE ───────────────────────────────────────────
+
+// ── CART AUTO-SAVE ───────────────────────────────────────
+function saveCart(){
+  localStorage.setItem('prisman_cart', JSON.stringify(cart));
+}
+
+function loadCart(){
+  const savedCart = JSON.parse(localStorage.getItem('prisman_cart') || '[]');
+  if(savedCart.length > 0 && cart.length === 0){
+    cart = savedCart;
+    updateCartUI();
+  }
+}
+// ── END CART AUTO-SAVE ───────────────────────────────────
+
+function updateNavUser(){
+  let el = document.getElementById('nav-user-name');
+  const navR = document.querySelector('.nav-r');
+  const menuLink = document.getElementById('menu-auth-link');
+  const ordersLink = document.getElementById('menu-orders-link');
+
+  if(currentUser){
+    const name = currentUser.user_metadata?.full_name || currentUser.email.split('@')[0];
+    if(!el){
+      el = document.createElement('span');
+      el.id='nav-user-name';
+      el.className='nav-user';
+      navR.insertBefore(el, navR.firstChild);
+    }
+    el.textContent = name;
+    if(menuLink) menuLink.textContent = translations[currentLang].logout;
+    if(ordersLink) ordersLink.style.display = 'block';
+  } else {
+    if(el) el.remove();
+    if(menuLink) menuLink.textContent = translations[currentLang].login;
+    if(ordersLink) ordersLink.style.display = 'none';
+  }
+}
+// ── END ORDER HISTORY ─────────────────────────────────────────
+
+function addToCart(){
+  if(!current) return;
+  const size = document.querySelector('.size.sel')?.textContent||'M';
+  cart.push({...current, size, uid:Date.now(), qty:1});
+  updateCartUI();
+  animateCartBump();
+  closeDetail();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+initAuth();
+// ── END AUTH ───────────────────────────────────────────────
+
+const items=[
+  {id:1,cat:'top',name:'Сорочка оверсайз',price:'1 650 ₴',mat:'100% бавовна',tag:'new',desc:'Вільний крій, приховані ґудзики, подовжена спинка. Пошита з щільної органічної бавовни вагою 200 г/м².',stock:''},
+  {id:2,cat:'top',name:'Водолазка базова',price:'1 220 ₴',mat:'80% меринос, 20% шовк',tag:'',desc:'Тонка водолазка з горлом 8 см. Меринос не кусається, шовк надає блиск.',stock:'low'},
+  {id:3,cat:'top',name:'Топ на бретелях',price:'940 ₴',mat:'100% льон',tag:'new',desc:'Легкий льняний топ з регульованими бретелями. Підходить для спекотного літа.',stock:''},
+  {id:4,cat:'bottom',name:'Брюки wide leg',price:'2 499 ₴',img:'https://i.ibb.co/fdqM2kbv/image.png',mat:'100% бавовна',tag:'new',desc:'Широкі брюки з високою посадкою та бічними кишенями. Ідеальна довжина 9/8.',stock:''},
+  {id:5,cat:'bottom',name:'Спідниця-міді',price:'2 280 ₴',mat:'70% віскоза, 30% льон',tag:'',desc:'Пряма спідниця до середини литки. Змішана тканина добре тримає форму та приємна на дотик.',stock:'low'},
+  {id:6,cat:'bottom',name:'Шорти прямі',price:'1 530 ₴',mat:'100% бавовна',tag:'',desc:'Шорти до коліна з широким поясом та бічними кишенями.',stock:''},
+  {id:7,cat:'outer',name:'Пальто прямого крою',price:'7 430 ₴',mat:'70% вовна, 30% кашемір',tag:'new',desc:'Класичне пальто oversize на одному ґудзику. Вовняна суміш з кашеміром — тепло, але не громіздко.',stock:'low'},
+  {id:8,cat:'outer',name:'Тренч бавовняний',price:'5 580 ₴',mat:'100% бавовна',tag:'',desc:'Класичний тренч з поясом. Водовідштовхувальне просочення, без синтетики.',stock:'out'},
+  {id:9,cat:'acc',name:'Льняна сумка тоут',price:'1 100 ₴',mat:'100% льон',tag:'new',desc:'Просторна сумка на кожен день. Посилені ручки, внутрішня кишеня на блискавці.',stock:''},
+];
+
+const iconSVG=`<svg width="32" height="32" fill="none" stroke="#f0f0f0" stroke-width="1.2" viewBox="0 0 24 24"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.57a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.57a2 2 0 0 0-1.34-2.23z"/></svg>`;
+
+let current=null;
+// Показуємо тільки товари з фото + перший без фото
+let noImgShown=false;
+function render(list){
+  const g=document.getElementById('grid');
+  g.innerHTML=list.map(i=>`
+    <div class="item" onclick="openItem(${i.id})">
+      <div class="item-img" style="${i.img?'padding:0;overflow:hidden;':''}">
+        ${i.img?`<img src="${i.img}" alt="${i.name}" style="width:100%;height:100%;object-fit:cover;display:block;">`:`${iconSVG}<span class="item-img-label">PRISMAN SS 2026</span>`}
+      </div>
+      <div class="item-info">
+        <div class="item-name">${i.name}</div>
+        <div class="item-mat">${i.mat}</div>
+        <div class="item-row">
+          <span class="item-price">${i.price}</span>
+          ${i.tag==='new'?'<span class="item-tag new-tag">NEW</span>':'<span class="item-tag">В НАЛИЧИИ</span>'}
+        </div>
+      </div>
+    </div>`).join('');
+  document.getElementById('count').textContent='Показано: '+list.length;
+  // Оновлюємо лічильник колекції автоматично
+  const totalEl=document.getElementById('total-count');
+  if(totalEl) totalEl.textContent=items.length;
+}
+function filter(cat,btn){
+  document.querySelectorAll('.ftab').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  closeDetail();
+  render(cat==='all'?items:items.filter(i=>i.cat===cat));
+}
+function openItem(id){
+  const i=items.find(x=>x.id===id);
+  current=i;
+  document.getElementById('d-name').textContent=i.name;
+  document.getElementById('d-price').textContent=formatPrice(i.price);
+  document.getElementById('d-desc').textContent=i.desc;
+  document.getElementById('d-meta').innerHTML=`Матеріал: ${i.mat}<br>Догляд: прання при 30°C, не віджимати<br>Виробництво: Україна`;
+
+  // Load rating
+  loadItemRating(id);
+
+  // Set stock status
+  const stockEl = document.getElementById('d-stock');
+  if(i.stock === 'low'){
+    stockEl.textContent = translations[currentLang].stock_low;
+    stockEl.className = 'stock-status low';
+  } else if(i.stock === 'out'){
+    stockEl.textContent = translations[currentLang].stock_out;
+    stockEl.className = 'stock-status out';
+  } else {
+    stockEl.textContent = translations[currentLang].stock_in;
+    stockEl.className = 'stock-status';
+  }
+
+  // Update wishlist button
+  updateWishlistButton();
+
+  const dImg=document.getElementById('detail-img-inner');
+  if(i.img){dImg.innerHTML=`<img src="${i.img}" alt="${i.name}" style="width:100%;height:100%;object-fit:cover;display:block;">`;dImg.style.padding='0';}
+  else{dImg.innerHTML=`<svg width="64" height="64" fill="none" stroke="#f0f0f0" stroke-width="1.2" viewBox="0 0 24 24"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.57a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.57a2 2 0 0 0-1.34-2.23z"/></svg>`;dImg.style.padding='';}
+  const d=document.getElementById('detail');
+  d.classList.add('open');
+  d.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+function closeDetail(){document.getElementById('detail').classList.remove('open');}
+function selSize(btn){document.querySelectorAll('.size').forEach(b=>b.classList.remove('sel'));btn.classList.add('sel');}
+
+// --- CART ---
+let cart=[];
+
+function updateCartUI(){
+  const count=cart.length;
+  const el=document.getElementById('cart-count');
+  el.textContent=count;
+  el.classList.toggle('show',count>0);
+
+  const container=document.getElementById('cart-items');
+  const footer=document.getElementById('cart-footer');
+  if(count===0){
+    container.innerHTML=`<p class="cart-empty">${translations[currentLang].cart_empty}</p>`;
+    footer.style.display='none';
+    saveCart();
+    return;
+  }
+  footer.style.display='block';
+  container.innerHTML=cart.map(i=>`
+    <div class="cart-item">
+      <div class="cart-item-info">
+        <div class="cart-item-name">${i.name}</div>
+        <div class="cart-item-size">${translations[currentLang].cart_item_size}: ${i.size}</div>
+      </div>
+      <div class="qty-control">
+        <button class="qty-btn" onclick="updateQuantity(${i.uid}, -1)">-</button>
+        <span class="qty-value">${i.qty || 1}</span>
+        <button class="qty-btn" onclick="updateQuantity(${i.uid}, 1)">+</button>
+      </div>
+      <span class="cart-item-price">${formatPrice(i.price)}</span>
+      <button class="cart-item-remove" onclick="removeFromCart(${i.uid})">×</button>
+    </div>`).join('');
+
+  const total=cart.reduce((sum,i)=>{
+    const n=parseInt(i.price.replace(/\D/g,''));
+    return sum + n * (i.qty || 1);
+  },0);
+  document.getElementById('cart-total-price').textContent=convertPrice(total + ' ₴');
+  saveCart();
+}
+
+function removeFromCart(uid){
+  cart=cart.filter(i=>i.uid!==uid);
+  updateCartUI();
+}
+
+function openCart(){
+  document.getElementById('cart-panel').classList.add('open');
+  document.getElementById('overlay').classList.add('show');
+}
+function closeCart(){
+  document.getElementById('cart-panel').classList.remove('open');
+}
+
+function animateCartBump(){
+  const btn=document.querySelector('.cart-btn');
+  btn.style.transition='transform 0.15s ease';
+  btn.style.transform='scale(1.3)';
+  setTimeout(()=>{btn.style.transform='scale(1)';},200);
+}
+
+function toggleMenu(){
+  const b=document.getElementById('burger');
+  const m=document.getElementById('mobile-menu');
+  const o=document.getElementById('menu-overlay');
+  b.classList.toggle('open');
+  m.classList.toggle('open');
+  o.classList.toggle('show');
+}
+function closeMenu(){
+  document.getElementById('burger').classList.remove('open');
+  document.getElementById('mobile-menu').classList.remove('open');
+  document.getElementById('menu-overlay').classList.remove('show');
+}
+
+// ── I18N & CURRENCY ──────────────────────────────────────────
+const translations = {
+  ua: {
+    cart: 'кошик',
+    collection: 'Колекція',
+    about: 'Про бренд',
+    contacts: 'Контакти',
+    login: 'Увійти',
+    logout: 'Вийти',
+    cart_title: 'КОШИК',
+    cart_empty: 'Кошик порожній',
+    total: 'Разом',
+    checkout: 'оформити замовлення',
+    hero_tag: 'SS 2026 · НОВА КОЛЕКЦІЯ',
+    hero_title: 'Мінімум тканини.<br>Максимум<br>характеру.',
+    hero_sub: 'Форма без зайвого.<br>Речі, що говорять самі за себе.',
+    view_collection: 'переглянути колекцію',
+    items_count: 'позиції в колекції',
+    natural_materials: 'натуральні матеріали',
+    founded: 'рік заснування',
+    free_delivery: 'БЕЗКОШТОВНА ДОСТАВКА ВІД 2000 ₴',
+    returns: 'ПОВЕРНЕННЯ ПРОТЯГОМ 30 ДНІВ',
+    handmade: 'РУЧНА РОБОТА',
+    eco: 'ЕКОЛОГІЧНЕ ВИРОБНИЦТВО',
+    collection_title: 'КОЛЕКЦІЯ SS 2026',
+    shown: 'Показано: 9',
+    filter_all: 'Все',
+    filter_top: 'Верх',
+    filter_bottom: 'Низ',
+    filter_outer: 'Верхній одяг',
+    filter_acc: 'Аксесуари',
+    size: 'РОЗМІР',
+    add_to_cart: 'додати до кошика',
+    close: 'закрити',
+    manifesto_text: 'Ми створюємо речі, які залишаються з тобою довше одного сезону.',
+    manifesto_label: 'МАНІФЕСТ PRISMAN · SLOW FASHION',
+    reg_success: 'РЕЄСТРАЦІЮ УСПІШНО ЗАВЕРШЕНО!',
+    reg_welcome: 'Вітаємо у Prisman! Ми раді бачити вас у нашому магазині.',
+    reg_email_sent: 'Ми надіслали лист на вашу адресу.<br>Перейдіть за посиланням у листі щоб активувати акаунт.',
+    reg_spam: 'Перевірте папку «Спам» якщо лист не прийшов.',
+    resend: 'Надіслати знову',
+    login_to_account: 'УВІЙТИ В АКАУНТ',
+    close_auth: 'ЗАКРИТИ',
+    login_tab: 'УВІЙТИ',
+    register_tab: 'РЕЄСТРАЦІЯ',
+    login_title: 'УВІЙДІТЬ У СИСТЕМУ',
+    email_placeholder: 'АДРЕСА ЕЛ. ПОШТИ',
+    password_placeholder: 'ПАРОЛЬ',
+    login_btn: 'УВІЙТИ',
+    or: 'АБО',
+    google_login: 'ПРОДОВЖИТИ З GOOGLE',
+    register_title: 'СТВОРІТЬ ОБЛІКОВИЙ ЗАПИС',
+    name_placeholder: 'ІМ\'Я',
+    password_reg_placeholder: 'ПАРОЛЬ (мін. 6 символів)',
+    register_btn: 'ЗАРЕЄСТРУВАТИСЯ',
+    register_note: 'Після реєстрації ми надішлемо лист для підтвердження email.<br>Без підтвердження вхід неможливий.',
+    in_stock: 'В НАЛИЧІІ',
+    error_fill_fields: 'Заповніть всі поля',
+    error_password_short: 'Пароль мінімум 6 символів',
+    error_invalid_login: 'Невірний email або пароль',
+    error_confirm_email: 'Підтвердіть email — перевірте пошту та перейдіть за посиланням у листі',
+    error_confirm_email_first: 'Спочатку підтвердіть email — перевірте пошту',
+    checkout_notice: 'Щоб оформити замовлення, увійдіть або зареєструйтеся',
+    order_success: 'Замовлення оформлено! Дякуємо за покупку 🎉',
+    loading: 'ЗАВАНТАЖЕННЯ...',
+    cart_item_size: 'Розмір',
+    checkout_title: 'ОФОРМЛЕННЯ ЗАМОВЛЕННЯ',
+    delivery_method: 'СПОСІБ ДОСТАВКИ',
+    delivery_address: 'АДРЕСА ДОСТАВКИ',
+    contact_info: 'КОНТАКТНА ІНФОРМАЦІЯ',
+    payment_method: 'СПОСІБ ОПЛАТИ',
+    payment_cod: 'Оплата при отриманні',
+    promo_code: 'ПРОМОКОД',
+    saved_addresses: 'ЗБЕРЕЖЕНІ АДРЕСИ',
+    subtotal: 'Підсумок',
+    delivery: 'Доставка',
+    discount: 'Знижка',
+    place_order: 'ОФОРМИТИ ЗАМОВЛЕННЯ',
+    city_placeholder: 'Місто',
+    address_placeholder: 'Вулиця, будинок, квартира',
+    postal_placeholder: 'Поштовий індекс',
+    phone_placeholder: 'Телефон',
+    promo_placeholder: 'Введіть промокод',
+    apply: 'Застосувати',
+    select_delivery: 'Оберіть спосіб доставки',
+    select_payment: 'Оберіть спосіб оплати',
+    fill_contact: 'Заповніть контактну інформацію',
+    fill_address: 'Заповніть адресу доставки',
+    order_history: 'ІСТОРІЯ ЗАМОВЛЕНЬ',
+    order_status: 'Статус',
+    order_date: 'Дата',
+    order_total: 'Сума',
+    reorder: 'ПОВТОРИТИ ЗАМОВЛЕННЯ',
+    status_pending: 'Очікує',
+    status_processing: 'Обробляється',
+    status_shipped: 'Відправлено',
+    status_delivered: 'Доставлено',
+    status_cancelled: 'Скасовано',
+    orders_empty: 'У вас ще немає замовлень',
+    search_placeholder: 'Пошук...',
+    wishlist_title: 'ОБРАНЕ',
+    wishlist_empty: 'Список обраного порожній',
+    add_to_wishlist: 'додати в обране',
+    remove_from_wishlist: 'видалити з обраного',
+    size_chart: 'Таблиця розмірів',
+    sort_default: 'За замовчуванням',
+    sort_price_asc: 'Ціна: низька → висока',
+    sort_price_desc: 'Ціна: висока → низька',
+    sort_newest: 'Найновіші',
+    stock_low: 'Мало на складі',
+    stock_out: 'Немає в наявності',
+    stock_in: 'В наявності'
+  },
+  en: {
+    cart: 'cart',
+    collection: 'Collection',
+    about: 'About',
+    contacts: 'Contacts',
+    login: 'Login',
+    logout: 'Logout',
+    cart_title: 'CART',
+    cart_empty: 'Cart is empty',
+    total: 'Total',
+    checkout: 'checkout',
+    hero_tag: 'SS 2026 · NEW COLLECTION',
+    hero_title: 'Minimum fabric.<br>Maximum<br>character.',
+    hero_sub: 'Form without excess.<br>Things that speak for themselves.',
+    view_collection: 'view collection',
+    items_count: 'items in collection',
+    natural_materials: 'natural materials',
+    founded: 'year founded',
+    free_delivery: 'FREE DELIVERY FROM 2000 ₴',
+    returns: 'RETURNS WITHIN 30 DAYS',
+    handmade: 'HANDMADE',
+    eco: 'ECO PRODUCTION',
+    collection_title: 'SS 2026 COLLECTION',
+    shown: 'Shown: 9',
+    filter_all: 'All',
+    filter_top: 'Tops',
+    filter_bottom: 'Bottoms',
+    filter_outer: 'Outerwear',
+    filter_acc: 'Accessories',
+    size: 'SIZE',
+    add_to_cart: 'add to cart',
+    close: 'close',
+    manifesto_text: 'We create things that stay with you longer than one season.',
+    manifesto_label: 'PRISMAN MANIFESTO · SLOW FASHION',
+    reg_success: 'REGISTRATION SUCCESSFULLY COMPLETED!',
+    reg_welcome: 'Welcome to Prisman! We are glad to see you in our store.',
+    reg_email_sent: 'We have sent a letter to your address.<br>Follow the link in the letter to activate your account.',
+    reg_spam: 'Check the "Spam" folder if the letter has not arrived.',
+    resend: 'Resend',
+    login_to_account: 'LOGIN TO ACCOUNT',
+    close_auth: 'CLOSE',
+    login_tab: 'LOGIN',
+    register_tab: 'REGISTER',
+    login_title: 'SIGN IN',
+    email_placeholder: 'EMAIL ADDRESS',
+    password_placeholder: 'PASSWORD',
+    login_btn: 'LOGIN',
+    or: 'OR',
+    google_login: 'CONTINUE WITH GOOGLE',
+    register_title: 'CREATE ACCOUNT',
+    name_placeholder: 'NAME',
+    password_reg_placeholder: 'PASSWORD (min. 6 characters)',
+    register_btn: 'REGISTER',
+    register_note: 'After registration we will send a letter to confirm email.<br>Without confirmation login is not possible.',
+    in_stock: 'IN STOCK',
+    error_fill_fields: 'Fill in all fields',
+    error_password_short: 'Password minimum 6 characters',
+    error_invalid_login: 'Invalid email or password',
+    error_confirm_email: 'Confirm email — check your mail and follow the link in the letter',
+    error_confirm_email_first: 'First confirm email — check your mail',
+    checkout_notice: 'To place an order, log in or register',
+    order_success: 'Order placed! Thank you for your purchase 🎉',
+    loading: 'LOADING...',
+    cart_item_size: 'Size',
+    checkout_title: 'CHECKOUT',
+    delivery_method: 'DELIVERY METHOD',
+    delivery_address: 'DELIVERY ADDRESS',
+    contact_info: 'CONTACT INFORMATION',
+    payment_method: 'PAYMENT METHOD',
+    payment_cod: 'Cash on delivery',
+    promo_code: 'PROMO CODE',
+    saved_addresses: 'SAVED ADDRESSES',
+    subtotal: 'Subtotal',
+    delivery: 'Delivery',
+    discount: 'Discount',
+    place_order: 'PLACE ORDER',
+    city_placeholder: 'City',
+    address_placeholder: 'Street, building, apartment',
+    postal_placeholder: 'Postal code',
+    phone_placeholder: 'Phone',
+    promo_placeholder: 'Enter promo code',
+    apply: 'Apply',
+    select_delivery: 'Select delivery method',
+    select_payment: 'Select payment method',
+    fill_contact: 'Fill in contact information',
+    fill_address: 'Fill in delivery address',
+    order_history: 'ORDER HISTORY',
+    order_status: 'Status',
+    order_date: 'Date',
+    order_total: 'Total',
+    reorder: 'REORDER',
+    status_pending: 'Pending',
+    status_processing: 'Processing',
+    status_shipped: 'Shipped',
+    status_delivered: 'Delivered',
+    status_cancelled: 'Cancelled',
+    orders_empty: 'You have no orders yet',
+    search_placeholder: 'Search...',
+    wishlist_title: 'WISHLIST',
+    wishlist_empty: 'Wishlist is empty',
+    add_to_wishlist: 'add to wishlist',
+    remove_from_wishlist: 'remove from wishlist',
+    size_chart: 'Size chart',
+    sort_default: 'Default',
+    sort_price_asc: 'Price: low to high',
+    sort_price_desc: 'Price: high to low',
+    sort_newest: 'Newest',
+    stock_low: 'Low stock',
+    stock_out: 'Out of stock',
+    stock_in: 'In stock'
+  }
+};
+
+const currencyRates = {
+  uah: 1,
+  eur: 1 / 51.86,
+  usd: 1 / 44.80
+};
+
+const currencySymbols = {
+  uah: '₴',
+  eur: '€',
+  usd: '$'
+};
+
+let currentLang = localStorage.getItem('prisman_lang') || 'ua';
+let currentCurr = localStorage.getItem('prisman_curr') || 'uah';
+
+function setLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('prisman_lang', lang);
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('lang-' + lang).classList.add('active');
+  applyTranslations();
+  render(items);
+}
+
+function setCurr(curr) {
+  currentCurr = curr;
+  localStorage.setItem('prisman_curr', curr);
+  document.querySelectorAll('.curr-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('curr-' + curr).classList.add('active');
+  render(items);
+  updateCartUI();
+}
+
+function applyTranslations() {
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (translations[currentLang][key]) {
+      el.innerHTML = translations[currentLang][key];
+    }
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (translations[currentLang][key]) {
+      el.placeholder = translations[currentLang][key];
+    }
+  });
+  updateNavUser();
+  // Update cart UI with translations
+  if(cart.length === 0){
+    const container = document.getElementById('cart-items');
+    if(container) container.innerHTML = `<p class="cart-empty">${translations[currentLang].cart_empty}</p>`;
+  } else {
+    updateCartUI();
+  }
+}
+
+function convertPrice(priceUAH) {
+  const num = parseInt(priceUAH.replace(/\D/g, ''));
+  const converted = num * currencyRates[currentCurr];
+  return Math.round(converted).toLocaleString('en-US') + ' ' + currencySymbols[currentCurr];
+}
+
+function formatPrice(price) {
+  if (typeof price === 'string' && price.includes('₴')) {
+    return convertPrice(price);
+  }
+  return price;
+}
+
+// Override render to use currency
+const originalRender = render;
+render = function(list) {
+  let filteredList = list;
+
+  // Apply search filter
+  if(currentSearch){
+    filteredList = filteredList.filter(i => i.name.toLowerCase().includes(currentSearch));
+  }
+
+  // Apply price filter
+  if(priceFilter.min > 0 || priceFilter.max < Infinity){
+    filteredList = filteredList.filter(item => {
+      const price = parseInt(item.price.replace(/\D/g, ''));
+      return price >= priceFilter.min && price <= priceFilter.max;
+    });
+  }
+
+  // Apply sorting
+  switch(currentSort){
+    case 'price-asc':
+      filteredList = [...filteredList].sort((a, b) => parseInt(a.price.replace(/\D/g, '')) - parseInt(b.price.replace(/\D/g, '')));
+      break;
+    case 'price-desc':
+      filteredList = [...filteredList].sort((a, b) => parseInt(b.price.replace(/\D/g, '')) - parseInt(a.price.replace(/\D/g, '')));
+      break;
+    case 'newest':
+      filteredList = [...filteredList].sort((a, b) => b.id - a.id);
+      break;
+  }
+
+  const g = document.getElementById('grid');
+  g.innerHTML = filteredList.map(i => {
+    const inWishlist = wishlist.some(w => w.id === i.id);
+    return `
+    <div class="item" onclick="openItem(${i.id})">
+      <button class="wishlist-btn ${inWishlist ? 'active' : ''}" onclick="event.stopPropagation();toggleWishlistItem(${i.id})">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      </button>
+      <div class="item-img" style="${i.img?'padding:0;overflow:hidden;':''}">
+        ${i.img?`<img src="${i.img}" alt="${i.name}" style="width:100%;height:100%;object-fit:cover;display:block;">`:`${iconSVG}<span class="item-img-label">PRISMAN SS 2026</span>`}
+      </div>
+      <div class="item-info">
+        <div class="item-name">${i.name}</div>
+        <div class="item-mat">${i.mat}</div>
+        <div class="item-row">
+          <span class="item-price">${formatPrice(i.price)}</span>
+          ${i.tag==='new'?'<span class="item-tag new-tag">NEW</span>':`<span class="item-tag">${translations[currentLang].in_stock}</span>`}
+        </div>
+        ${i.stock === 'low' ? '<span class="stock-status low">Мало на складі</span>' : ''}
+        ${i.stock === 'out' ? '<span class="stock-status out">Немає в наявності</span>' : ''}
+      </div>
+    </div>`;
+  }).join('');
+  document.getElementById('count').textContent = translations[currentLang].shown.replace('9', filteredList.length);
+  const totalEl = document.getElementById('total-count');
+  if(totalEl) totalEl.textContent = items.length;
+};
+
+// Initialize language and currency
+document.getElementById('lang-' + currentLang).classList.add('active');
+document.getElementById('curr-' + currentCurr).classList.add('active');
+applyTranslations();
+render(items);
+
+// Initialize wishlist and cart auto-save
+loadWishlist();
+loadCart();
+// ── END I18N & CURRENCY ───────────────────────────────────────
+</script>
+
+<div class="auth-overlay" id="auth-overlay">
+  <div class="auth-box">
+    <button class="auth-close" onclick="closeAuth()">×</button>
+    <div class="auth-logo"><img src="data:image/png;base64,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" alt="PRISMAN" style="height:52px;filter:none;"></div>
+
+    <div id="checkout-notice" class="checkout-notice" style="display:none"></div>
+
+    <!-- VERIFY SCREEN -->
+    <div id="verify-screen" class="verify-screen" style="display:none">
+      <div class="v-icon">🎉</div>
+      <h3 data-i18n="reg_success">РЕЄСТРАЦІЮ УСПІШНО ЗАВЕРШЕНО!</h3>
+      <p data-i18n="reg_welcome">Вітаємо у Prisman! Ми раді бачити вас у нашому магазині.</p>
+      <p data-i18n="reg_email_sent">Ми надіслали лист на вашу адресу.<br>Перейдіть за посиланням у листі щоб активувати акаунт.</p>
+      <p style="font-size:11px;color:#bbb;margin-bottom:1.5rem" data-i18n="reg_spam">Перевірте папку «Спам» якщо лист не прийшов.</p>
+      <button class="resend" onclick="resendEmail()" data-i18n="resend">Надіслати знову</button>
+      <div id="resend-msg" class="auth-msg" style="display:none"></div>
+      <div style="margin-top:1.5rem;display:flex;flex-direction:column;gap:10px">
+        <button class="auth-btn" onclick="goToLogin()" data-i18n="login_to_account">УВІЙТИ В АКАУНТ</button>
+        <button class="auth-btn" style="background:#fff;color:#111;border:1px solid #ddd" onclick="closeAuth()" data-i18n="close_auth">ЗАКРИТИ</button>
+      </div>
+    </div>
+
+    <!-- AUTH FORMS -->
+    <div id="auth-forms">
+      <div class="auth-tabs">
+        <button class="auth-tab active" onclick="switchTab('login',this)" data-i18n="login_tab">УВІЙТИ</button>
+        <button class="auth-tab" onclick="switchTab('register',this)" data-i18n="register_tab">РЕЄСТРАЦІЯ</button>
+      </div>
+
+      <!-- LOGIN -->
+      <div id="auth-login">
+        <p class="auth-title" data-i18n="login_title">УВІЙДІТЬ У СИСТЕМУ</p>
+        <input class="auth-input" type="email" placeholder="АДРЕСА ЕЛ. ПОШТИ" id="login-email" data-i18n-placeholder="email_placeholder">
+        <input class="auth-input" type="password" placeholder="ПАРОЛЬ" id="login-pass" data-i18n-placeholder="password_placeholder">
+        <div id="login-msg" class="auth-msg" style="display:none"></div>
+        <button class="auth-btn" id="login-btn" onclick="doLogin()" data-i18n="login_btn">УВІЙТИ</button>
+        <div class="auth-divider" data-i18n="or">АБО</div>
+        <button class="auth-social" onclick="doGoogle()">
+          <svg width="16" height="16" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+          <span data-i18n="google_login">ПРОДОВЖИТИ З GOOGLE</span>
+        </button>
+      </div>
+
+      <!-- REGISTER -->
+      <div id="auth-register" style="display:none">
+        <p class="auth-title" data-i18n="register_title">СТВОРІТЬ ОБЛІКОВИЙ ЗАПИС</p>
+        <input class="auth-input" type="text" placeholder="ІМ'Я" id="reg-name" data-i18n-placeholder="name_placeholder">
+        <input class="auth-input" type="email" placeholder="АДРЕСА ЕЛ. ПОШТИ" id="reg-email" data-i18n-placeholder="email_placeholder">
+        <input class="auth-input" type="password" placeholder="ПАРОЛЬ (мін. 6 символів)" id="reg-pass" data-i18n-placeholder="password_reg_placeholder">
+        <div id="reg-msg" class="auth-msg" style="display:none"></div>
+        <button class="auth-btn" id="reg-btn" onclick="doRegister()" data-i18n="register_btn">ЗАРЕЄСТРУВАТИСЯ</button>
+        <p class="auth-note" data-i18n="register_note">Після реєстрації ми надішлемо лист для підтвердження email.<br>Без підтвердження вхід неможливий.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
